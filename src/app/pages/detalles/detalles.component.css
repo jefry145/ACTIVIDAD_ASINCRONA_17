@@ -1,0 +1,16 @@
+h3{
+    color: rgb(59, 59, 59);
+    font-weight: 900;
+}
+h5{
+    color: rgb(80, 80, 80);
+    font-weight: 600;
+}
+input{
+    background-color: rgb(255, 255, 255) !important;
+    border: none;
+    border-bottom: 1px solid rgb(177, 177, 177);
+    height: 1px;
+    width: 18%;
+    margin: -25px 0;
+}

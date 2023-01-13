@@ -1,0 +1,75 @@
+<div class="container">
+    <div class="row py-5">
+        <div class="col-7">
+            <input class="form-control" placeholder="Codigo" type="number" [(ngModel)]="codigobarras" name="codigobarras"><br>
+            <input class="form-control" placeholder="Descripciòn del producto" type="text" [(ngModel)]="descripcion" name="descripcion"><br>
+            <input class="form-control" placeholder="Cantidad" type="number" [(ngModel)]="Existencia" name="Existencia">
+        </div>
+        <div class="col-5 px-3">
+            <input class="form-control" placeholder="Precio de compra" type="number" [(ngModel)]="PrecioCmp" name="PrecioCmp"><br>
+            <input class="form-control" placeholder="Precio de Venta" type="number" [(ngModel)]="PrecioVnt" name="PrecioVnt"><br>
+            <input class="form-control" placeholder="Ganancia" type="number" [(ngModel)]="Ganancia" name="Ganancia">
+        </div>
+    </div>
+    <div class="row text-center">
+        <div class="col">
+            <button class="btn btn-outline-dark" (click)="guardarEnArray()">Guardar en la Base de datos</button>
+        </div>
+    </div>
+</div>
+<div class="container py-3 font-monospace">
+
+    <table class="table">
+        <thead class="table-light">
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col">Producto</th>
+            <th scope="col">Cantidad</th>
+            <th scope="col">Precio de Compra</th>
+            <th scope="col">Precio de Venta</th>
+            <th scope="col">Ganancia</th>
+            <th scope="col">Editar</th>
+          </tr>
+        </thead>
+    </table>
+            <div class="row text-center " *ngFor="let element of dataservice.DatosDeProducto">
+                <div class="col-1  py-1">
+                    {{element.codigo}}
+                </div>
+                <div class="col-1  py-1">
+                    {{element.descripcion}}
+                </div>
+                <div class="col-1  py-1">
+                    {{element.cantidad}}
+                </div>
+                <div class="col-3  py-1">
+                    {{element.precioCmp}}
+                </div>
+                <div class="col-3  py-1">
+                    {{element.precioVnt}}
+                </div>
+                <div class="col-1  py-1">
+                    {{element.ganancia}}
+                </div>
+                <div class="col-2 py-1">
+                    <button class="btn btn-outline-warning" [routerLink]="['detalles',element.codigo ]">ir a detalles</button>
+                </div>
+            </div>
+</div>
+
+
+<!-- <p>products works!</p>
+<input type="number" [(ngModel)]="codigobarras" name="codigobarras">
+<br>
+<input type="text" [(ngModel)]="descripcion" name="descripcion">
+<br>
+<input type="number" [(ngModel)]="PrecioCmp" name="PrecioCmp"> -->
+
+<!-- <button (click)="guardarEnArray()">guardar</button> -->
+
+<!-- <div class="" *ngFor="let element of dataservice.DatosDeProducto">
+    <div class="">
+        {{element.codigo}}
+        <button [routerLink]="['detalles',element.codigo ]">ir a detalles</button>
+    </div>
+</div> -->
